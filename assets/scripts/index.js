@@ -43,11 +43,10 @@ const processProjectsWidgetInfo = async (filterBy = null, dataFilter = null) => 
                 yearSelector.appendChild(selectOption);
             }
 
-            let selectOption = document.createElement('option');
             if(project.techstack!==undefined && Array.isArray(project.techstack)) {
                 project.techstack.forEach(stack => {
+                    let selectOption = document.createElement('option');
                     if(!stackSelOptions.includes(stack)) {
-                        console.log(stack);
                         stackSelOptions.push(stack);
                         selectOption.value = stack;
                         selectOption.text = stack;

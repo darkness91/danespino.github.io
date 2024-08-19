@@ -86,22 +86,35 @@ const processProjectsWidgetInfo = async (filterBy = null, dataFilter = null) => 
                     </div>
                     <p class="w-full font-bold text-white self-center justify-center absolute inset-x-1/3 inset-y-1/2 z-10">${project.name}</p>
                 </a>`;	
-            projectFolio.appendChild(projectElement);
-
-            
+            projectFolio.appendChild(projectElement);   
         });
-        
     } else {
         return;
     }
 }
 
+const showLoader = (show = false) => {
+    const loaderDiv = document.getElementById("loader");
+    const workArea = document.getElementById("landingPage");
+
+    if(show) {
+        document.body.classList.remove("bg-scroll");
+        workArea.style = "display: none";
+        document.body.style = "overflow: hidden";
+        loaderDiv.style = "display: flex";
+    } else {
+        workArea.style = "display: block";
+        document.body.style = "overflow: auto";
+        loaderDiv.style = "display: none";
+    }
+    return;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    showLoader(true);
     processProjectsWidgetInfo();
 });
 
-document.getElementById('projectsGal').addEventListener('change', () => {
-    const yearSelect = document.getElementById('yearSelector');
-    
-    const selectedYear = yearSelect.value;
+window.addEventListener('load', () => {
+    showLoader(false);
 });

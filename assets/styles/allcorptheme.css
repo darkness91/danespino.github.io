@@ -659,33 +659,14 @@ video {
   inset: -0.25rem;
 }
 
-.inset-0 {
-  inset: 0px;
-}
-
 .inset-x-1\/3 {
   left: 33.333333%;
   right: 33.333333%;
 }
 
-.inset-y-1\/2 {
-  top: 50%;
-  bottom: 50%;
-}
-
-.inset-y-1\/3 {
-  top: 33.333333%;
-  bottom: 33.333333%;
-}
-
 .inset-y-0 {
   top: 0px;
   bottom: 0px;
-}
-
-.inset-y-\[0\.55\%\] {
-  top: 0.55%;
-  bottom: 0.55%;
 }
 
 .-right-2 {
@@ -893,26 +874,6 @@ video {
   display: none;
 }
 
-.size-2\/4 {
-  width: 50%;
-  height: 50%;
-}
-
-.size-1\/4 {
-  width: 25%;
-  height: 25%;
-}
-
-.size-1\/2 {
-  width: 50%;
-  height: 50%;
-}
-
-.size-4\/6 {
-  width: 66.666667%;
-  height: 66.666667%;
-}
-
 .size-full {
   width: 100%;
   height: 100%;
@@ -936,24 +897,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-1\/2 {
-  height: 50%;
-}
-
-.h-fit {
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.h-min {
-  height: -moz-min-content;
-  height: min-content;
-}
-
-.h-2\/3 {
-  height: 66.666667%;
 }
 
 .min-h-screen {
@@ -988,20 +931,8 @@ video {
   width: 100vw;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
-.w-1\/3 {
-  width: 33.333333%;
-}
-
 .max-w-md {
   max-width: 28rem;
-}
-
-.max-w-\[1\/2\] {
-  max-width: 1/2;
 }
 
 .flex-1 {
@@ -3089,40 +3020,12 @@ video {
     display: flex;
   }
 
-  .md\:h-1\/3 {
-    height: 33.333333%;
-  }
-
-  .md\:h-2\/3 {
-    height: 66.666667%;
-  }
-
-  .md\:h-1\/4 {
-    height: 25%;
-  }
-
-  .md\:h-3\/5 {
-    height: 60%;
-  }
-
   .md\:h-1\/2 {
     height: 50%;
   }
 
-  .md\:h-\[0\.55\%\] {
-    height: 0.55%;
-  }
-
-  .md\:h-screen {
-    height: 100vh;
-  }
-
-  .md\:h-auto {
-    height: auto;
-  }
-
-  .md\:h-1\/5 {
-    height: 20%;
+  .md\:h-3\/5 {
+    height: 60%;
   }
 
   .md\:scale-75 {
@@ -3131,8 +3034,8 @@ video {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
-  .md\:content-start {
-    align-content: flex-start;
+  .md\:content-between {
+    align-content: space-between;
   }
 
   .md\:pt-10 {

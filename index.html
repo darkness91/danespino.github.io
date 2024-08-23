@@ -88,26 +88,27 @@
                 </div>
             </div>
             <div id="projects" class="bg-black/80 snap-start scroll-mb-30 min-h-screen w-full px-auto border content-start static z-0 md:h-2/3">
-                <div class="w-full flex items-center justify-center ml-2 py-4" x-data="{ open: false }">
+                <div id="header_gallery" class="w-full flex items-center align-middle justify-center ml-2 py-4" x-data="{ open: false }">
                     <h2 class="text-gray-200 font-extrabold text-4xl py-4">Projects</h2>
-                        <button x-on:click="open = ! open" class="ml-2"><i class="fa-solid fa-filter text-white"></i></button>
-                        <div x-show="open" class="flex flex-row-reverse flex-wrap float-end items-stretch *:mx-6" x-transition>
-                            <div>
-                                <label for="stacks" class="block mb-2 text-sm font-medium text-gray-400 w-full">Stack</label>
-                                <select name="stacks" id="stackSelector" class="rounded-lg px-4 py-2.5 h-12 border border-gray-300 text-gray-600 text-base">
-                                    <option>All</option>
-                                </select>    
-                            </div>
-                            <div>
-                                <label for="year" class="block mb-2 text-sm font-medium text-gray-400 w-full">Year</label>
-                                <select name="year" id="yearSelector" class="rounded-lg px-4 py-2.5 h-12 border border-gray-300 text-gray-600 text-base">
-                                    <option>All</option>
-                                </select>    
-                            </div>
+                    <button x-on:click="open = ! open" class="ml-2"><i class="fa-solid fa-filter text-white"></i></button>
+                    <div x-show="open" class="flex flex-row-reverse flex-wrap float-end items-stretch *:mx-6" x-transition>
+                        <div>
+                            <label for="stacks" class="block mb-2 text-sm font-medium text-gray-400 w-full">Stack</label>
+                            <select name="stacks" id="stackSelector" class="rounded-lg px-4 py-2.5 h-12 border border-gray-300 text-gray-600 text-base focus:h-auto" multiple>
+                                <option>All</option>
+                            </select>    
                         </div>
+                        <div>
+                            <label for="year" class="block mb-2 text-sm font-medium text-gray-400 w-full">Year</label>
+                            <select name="year" id="yearSelector" class="rounded-lg px-4 py-2.5 h-12 border border-gray-300 text-gray-600 text-base">
+                                <option>All</option>
+                            </select>    
+                        </div>
+                        
+                    </div>
                 </div>       
 
-                <div id="projectsGal" class="flex overflow-x-scroll h-full scroll-smooth snap-x snap-mandatory snap-always py-5 md:h-2/3 *:mx-24 *:w-3/4 *:border *:h-auto">
+                <div id="projects_gallery" class="flex overflow-x-scroll h-full scroll-smooth snap-x snap-mandatory snap-always py-5 md:h-2/3 *:mx-24 *:w-3/4 *:border *:h-auto">
                     <div class="snap-center snap-always flex flex-shrink-0 items-stretch justify-center relative hover:scale-100 hover:text-2xl">
                         <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80" class="justify-center w-full h-auto scale-100 relative z-0" />
                         <p class="font-bold text-white self-center justify-center absolute z-10">This will work soon!</p>
@@ -129,6 +130,6 @@
             </div>
         </main>
     </div>
-    <script src="assets/scripts/index.js"></script>
+    <script type="module" src="assets/scripts/index.js"></script>
 </body>
 </html>

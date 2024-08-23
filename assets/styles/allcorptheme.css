@@ -591,24 +591,9 @@ video {
   right: 33.333333%;
 }
 
-.inset-y-1\/2 {
-  top: 50%;
-  bottom: 50%;
-}
-
-.inset-y-1\/3 {
-  top: 33.333333%;
-  bottom: 33.333333%;
-}
-
 .inset-y-0 {
   top: 0px;
   bottom: 0px;
-}
-
-.inset-y-\[0\.55\%\] {
-  top: 0.55%;
-  bottom: 0.55%;
 }
 
 .-right-2 {
@@ -697,6 +682,7 @@ video {
   display: none;
 }
 
+<<<<<<< HEAD
 .size-full {
   width: 100%;
   height: 100%;
@@ -722,6 +708,8 @@ video {
   height: 66.666667%;
 }
 
+=======
+>>>>>>> e2db037 (Fixes other visual bugs in the webpage)
 .size-full {
   width: 100%;
   height: 100%;
@@ -747,6 +735,7 @@ video {
   height: 100vh;
 }
 
+<<<<<<< HEAD
 .h-1\/2 {
   height: 50%;
 }
@@ -769,6 +758,8 @@ video {
   height: 66.666667%;
 }
 
+=======
+>>>>>>> e2db037 (Fixes other visual bugs in the webpage)
 .min-h-screen {
   min-height: 100vh;
 }
@@ -803,10 +794,6 @@ video {
 
 .max-w-md {
   max-width: 28rem;
-}
-
-.max-w-\[1\/2\] {
-  max-width: 1/2;
 }
 
 .flex-1 {
@@ -1853,12 +1840,21 @@ video {
     display: flex;
   }
 
+<<<<<<< HEAD
   .md\:h-1\/3 {
     height: 33.333333%;
   }
 
   .md\:h-2\/3 {
     height: 66.666667%;
+=======
+  .md\:h-1\/2 {
+    height: 50%;
+  }
+
+  .md\:h-3\/5 {
+    height: 60%;
+>>>>>>> e2db037 (Fixes other visual bugs in the webpage)
   }
 
   .md\:scale-75 {
@@ -1867,6 +1863,13 @@ video {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
+<<<<<<< HEAD
+=======
+  .md\:content-between {
+    align-content: space-between;
+  }
+
+>>>>>>> e2db037 (Fixes other visual bugs in the webpage)
   .md\:pt-10 {
     padding-top: 2.5rem;
   }

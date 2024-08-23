@@ -89,12 +89,12 @@ export default class ProjectGallery {
                 projectElement.classList.value = 'snap-center snap-always flex flex-shrink-0 items-stretch justify-center relative hover:scale-100 hover:text-2xl';
                 projectElement.innerHTML = `
                     <a href="${project.website}" target="_blank" class="h-full w-full">
-                        <img src="${project.screenshot}" class="justify-center w-full h-auto scale-100 relative z-0" />
+                        <img src="${project.screenshot}" class="justify-center size-full scale-100 relative z-0" />
                         <div class="w-32 h-16 font-bold text-center text-white absolute top-0 -right-2 z-10">
                             <div class="triangleIndicator hidden hover:inline-block"> <span>${project.year_start}</span></div>
                             
                         </div>
-                        <p class="w-full font-bold text-white self-center justify-center absolute inset-x-1/3 inset-y-1/2 z-10">${project.name}</p>
+                        <p class="max-w-1/2 font-bold text-white self-center justify-center text-center absolute text-wrap inset-x-1/3 inset-y-0 content-around z-10">${project.name}</p>
                     </a>`;	
                 projectFolio.appendChild(projectElement);
                 

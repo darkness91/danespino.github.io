@@ -91,10 +91,10 @@
                 <noscript>
                    <p class="flex flex-row text-center align-middle">You will need to enable Javascript to see this section</p> 
                 </noscript>
-                <div id="header_gallery" class="w-full flex items-center align-middle justify-center ml-2 py-4" x-data="{ open: false }">
+                <!-- <div id="header_gallery" class="w-full flex items-center align-middle justify-center ml-2 py-4" x-data="{ filterByDiv: false }">
                     <h2 class="text-gray-200 font-extrabold text-4xl py-4">Projects</h2>
-                    <button x-on:click="open = ! open" class="ml-2"><i class="fa-solid fa-filter text-white"></i></button>
-                    <div x-show="open" class="flex flex-row-reverse flex-wrap float-end items-stretch *:mx-6" x-transition>
+                    <button x-on:click="filterByDiv = ! filterByDiv" class="ml-2"><i class="fa-solid fa-filter text-white"></i></button>
+                    <div x-show="filterByDiv" class="flex flex-row-reverse flex-wrap float-end items-stretch *:mx-6" x-transition>
                         <div>
                             <label for="stacks" class="block mb-2 text-sm font-medium text-gray-400 w-full">Stack</label>
                             <select name="stacks" id="stackSelector" class="rounded-lg px-4 py-2.5 h-12 border border-gray-300 text-gray-600 text-base focus:h-auto" multiple>
@@ -109,7 +109,7 @@
                         </div>
                         
                     </div>
-                </div>       
+                </div> -->       
 
                 <div id="projects_gallery" class="flex overflow-x-scroll h-full align-middle scroll-smooth snap-x snap-mandatory snap-always py-5 md:h-3/5 *:mx-24 *:w-3/4 *:border *:h-auto">
                     <div class="snap-center snap-always flex flex-shrink-0 items-stretch justify-center relative hover:scale-100 hover:text-2xl">

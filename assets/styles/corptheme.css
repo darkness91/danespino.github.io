@@ -57,3 +57,11 @@
 .max-h-select {
     max-height: 300px;
 }
+
+.chip {
+    @apply px-4 py-2 mx-1 my-2 border rounded-xl inline-block text-white font-semibold text-sm;
+}
+
+.chip i, .chip svg{
+    @apply mr-2;
+}

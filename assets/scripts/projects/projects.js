@@ -51,13 +51,21 @@ export default class ProjectGallery {
             }
             this.drawWidget();  
         });
+        document.getElementById('widgetHeader').addEventListener('mouseover', (e)=>{
+            document.getElementById('filterButton').classList.remove('hidden');
+            document.getElementById('filterButton').classList.add('inline-block');
+        });
+        document.getElementById('widgetHeader').addEventListener('mouseleave', (e)=>{
+            document.getElementById('filterButton').classList.remove('inline-block');
+            document.getElementById('filterButton').classList.add('hidden');
+        });
     }
 
     async processProjectsInfo(initialCall = false) {
         await this.getWidgetInfo();
 
         if(initialCall) {
-            this.drawFilters();
+            this.drawUIElements();
             this.setListeners();
         }
 
@@ -104,14 +112,17 @@ export default class ProjectGallery {
         }    
     }
     
-    drawFilters() {
-        const yearSelector = document.getElementById('yearSelector');
-        const stackSelector = document.getElementById('stackSelector');
-
+    drawUIElements() {
         let yearSelOptions = [];
         let stackSelOptions = [];
 
         if(this.projects.length>0) {
+            // Creating title element
+            this.drawWidgetHeader();
+
+            let yearSelector = document.getElementById('yearSelector');
+            let stackSelector = document.getElementById('stackSelector');
+
             this.projects.forEach(project => {
                 if(!yearSelOptions.includes(project.year_start)) {
                     yearSelOptions.push(project.year_start);
@@ -146,5 +157,60 @@ export default class ProjectGallery {
         } else {
             return;
         }
+    }
+
+    drawWidgetHeader() {
+        const projectDiv = document.getElementById('projects');
+
+        let widgetHeaderTitle = document.createElement('div')
+        widgetHeaderTitle.setAttribute("id", "widgetHeadTitle");
+        let headerTitle = document.createElement('h2');
+        headerTitle.className = 'text-gray-200 font-extrabold text-4xl py-4';
+        headerTitle.textContent = 'Projects';
+        widgetHeaderTitle.appendChild(headerTitle);
+        
+        // Create the Button to show Filter Icon
+        let filterButton = document.createElement('button');
+        let filterIcon = document.createElement('i');
+        filterButton.setAttribute('id', 'filterButton');
+        filterButton.className = 'ml-2 hidden';            // Create an icon inside the button
+        filterIcon.className = 'fa-solid fa-filter text-white';
+        filterButton.appendChild(filterIcon);
+
+        // Create container for filter options
+        let filterContainer = document.createElement('div');
+        filterContainer.className = 'flex flex-row-reverse flex-wrap float-end items-stretch *:mx-6';
+        filterContainer.setAttribute('x-show', 'filterByDiv');
+        filterContainer.innerHTML = `<div>
+                        <label for="stacks" class="block mb-2 text-sm font-medium text-gray-400 w-full">Stack</label>
+                        <select name="stacks" id="stackSelector" class="rounded-lg px-4 py-2.5 h-12 border border-gray-300 text-gray-600 text-base focus:h-auto" multiple>
+                            <option>All</option>
+                        </select>    
+                    </div>
+                    <div>
+                        <label for="year" class="block mb-2 text-sm font-medium text-gray-400 w-full">Year</label>
+                        <select name="year" id="yearSelector" class="rounded-lg px-4 py-2.5 h-12 border border-gray-300 text-gray-600 text-base">
+                            <option>All</option>
+                        </select>    
+                    </div>`;
+        
+        // Adding the UI Elements as the widgetHeader
+        let widgetHeader = document.createElement('div')
+        widgetHeader.setAttribute('id', 'widgetHeader');
+        widgetHeader.className = 'w-full flex items-center align-middle justify-center ml-2 py-4';
+        widgetHeader.appendChild(widgetHeaderTitle);
+        widgetHeader.appendChild(filterButton);
+        widgetHeader.appendChild(filterContainer);
+        
+        projectDiv.prepend(widgetHeader);
+        // Attach Alpine.js to avoid any crash
+        widgetHeader.setAttribute('x-data', '{ filterByDiv: false }');
+        filterButton.setAttribute('x-init', `
+            $el.addEventListener('click', function() {
+                filterByDiv = !filterByDiv;
+            });
+        `); // Attach Alpine.js directive
+
+        return;
     }
 }

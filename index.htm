@@ -109,9 +109,151 @@
                 </div>
             </div>
         </div>
-        <div id="profile" class="bg-black snap-start scroll-mb-30 min-h-screen w-full px-auto pt-20 border md:pt-10">
-            <div class="bg-slate-900/90 text-white w-5/6 mx-auto p-3 *:mx-20">
-                This is text
+        <div id="profile" class="bg-black snap-start scroll-mb-30 min-h-screen w-full px-auto pt-20 overflow-x-hidden md:pt-10">
+            <div class="bg-slate-900/90 text-white w-5/6 mx-auto p-3 rounded" x-data="{ selectedTab: 'info' }">
+                <div class="flex w-full relative flex-col md:flex-row" role="tablist">
+                    <div 
+                        class="flex flex-col w-full text-xl border-b-2 border-b-slate-700 pb-2 md:w-1/4 md:border-r-2 md:border-r-slate-700 md:border-b-0 *:px-4 *:py-3">
+                        <div class="text-white w-full font-bold text-center">Informaci&oacute;n</div> 
+                        <button @click="selectedTab = 'info'" :aria-selected="selectedTab = 'info'" type="button" role="tab" aria-controls="tabpannelInfo" :class="selectedTab === 'info' ? 'bg-sky-200/50' : 'bg-transparent'" :tabindex="selectedTab === 'info' ? '0' : '-1'" class="rounded w-full text-start px-4 py-2">
+                            Información General
+                        </button>
+                        <button @click="selectedTab = 'work'" :aria-selected="selectedTab = 'work'" type="button" role="tab" aria-controls="tabpannelWork" :class="selectedTab === 'work' ? 'bg-sky-200/50' : 'bg-transparent'" :tabindex="selectedTab === 'work' ? '0' : '-1'" class="rounded w-full text-start px-4 py-2">
+                            Formación y Empleo
+                        </button>
+                        <button @click="selectedTab = 'skills'" :aria-selected="selectedTab = 'skills'" type="button" role="tab" aria-controls="tabpannelSkills" :class="selectedTab === 'skills' ? 'bg-sky-200/50' : 'bg-transparent'" :tabindex="selectedTab === 'skills' ? '0' : '-1'" class="rounded w-full text-start px-4 py-2">
+                            Certificaciones
+                        </button>
+                    </div>
+                    <div class="flex w-3/4 px-4">
+                        <div x-show="selectedTab === 'info'" id="tabpannelInfo" role="tabpanel" aria-label="info" class="flex flex-col text-xl w-full mt-6 *:py-4">
+                            <p><i class="fa-solid fa-location-dot mr-2"></i>Ubicación: <strong> San Salvador</strong></p>
+                            <div class="flex flex-col">
+                                <span class="inline">Idiomas</span>
+                                <hr class="border-white">
+                            </div>
+                            
+                            <div class="flex flex-row gap-5">
+                                <div class="flex flex-col justify-center align-middle text-3xl">
+                                    <i class="fa-solid fa-language"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span>Spanish</span>
+                                    <span class="text-xs">Nativo</span>    
+                                </div>
+                                <div class="flex flex-col justify-center align-middle text-3xl">
+                                    <i class="fa-solid fa-language"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span>English</span>
+                                    <span class="text-xs">C2</span>    
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <span class="inline">Lenguajes de Programación</span>
+                                <hr class="border-white">
+                            </div>
+                            <div class="flex flex-row gap-5">
+                                <img src="https://skillicons.dev/icons?i=html,js,react,css,bootstrap,tailwind,laravel,php,mysql,postgres" class="size-full" alt="">
+                            </div> 
+                        </div>
+                        <div x-show="selectedTab === 'work'" id="tabpannelWork" role="tabpanel" aria-label="work" class="flex flex-col text-xl w-full mt-6 *:py-4">
+                            <div class="flex flex-row gap-5">
+                                <div class="flex flex-col justify-center align-middle text-3xl">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span>Trabaja en <strong> <a href="#">Tek-Experts El Salvador</a> </strong></span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-row gap-5">
+                                <div class="flex flex-col justify-center align-middle text-3xl">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span>Estudió en <strong> <a href="https://www.ues.edu.sv" target="_blank">Universidad de El Salvador</a> </strong></span>
+                                    <span class="text-xs">Desde 2012 al 2021</span>    
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <span class="inline">Otras experiencias (Tech)</span>
+                                <hr class="border-white">
+                            </div>
+                            
+                            <div class="flex flex-row gap-5">
+                                <div class="flex flex-col justify-center align-middle text-3xl">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span>Trabajó en <strong> <a href="https://tecmanic.com/" target="_blank">Tecmanic USA</a> </strong></span>
+                                    <span class="text-xs">Desde Jun-2022 a Feb-2024</span>    
+                                </div>
+                            </div>
+
+                            <div class="flex flex-row gap-5">
+                                <div class="flex flex-col justify-center align-middle text-3xl">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span>Trabajó en <strong> <a href="#" target="_blank">Strategy & Technology MX</a> </strong></span>
+                                    <span class="text-xs">Desde Apr-2023 a Jul-2023</span>    
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                        <div x-show="selectedTab === 'skills'" id="tabpannelSkills" role="tabpanel" aria-label="skills" class="flex flex-col text-xl w-full mt-6 *:py-4">
+                            <div class="flex flex-col">
+                                <span class="inline">Salesforce</span>
+                                <hr class="border-white">
+                            </div>
+                            <div class="flex flex-row gap-5">
+                                <div class="flex flex-col justify-center align-middle text-3xl">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span><strong> <a href="#">Certified Platform App Builder</a></strong></span>
+                                    <span class="text-xs">Since Oct-2022</span>
+                                </div>
+                                <div class="flex flex-col justify-center align-middle text-3xl">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span><strong> <a href="#">Certified Associate</a></strong></span>
+                                    <span class="text-xs">Since May-2023</span>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <span class="inline">Cursos</span>
+                                <hr class="border-white">
+                            </div>
+                            <div class="flex flex-row gap-5">
+                                <div class="flex flex-col justify-center align-middle text-3xl">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span><strong> <a href="#" target="_blank">PMI-CAPM</a> </strong></span>
+                                    <span class="text-xs">Aligned Course By SkillSoft  (Nov-2021)</span>    
+                                </div>
+                            </div>
+
+                            <div class="flex flex-row gap-5">
+                                <div class="flex flex-col justify-center align-middle text-3xl">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span><strong> <a href="#" target="_blank">PMI-ACP</a> </strong></span>
+                                    <span class="text-xs">Aligned Course By SkillSoft  (Nov-2020)</span>    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="contact" class="snap-start scroll-mb-20 min-h-screen mx-auto">

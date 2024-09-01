@@ -62,7 +62,7 @@
               </div>
             </div>
             <div class="hidden md:inline-block md:mt-16">
-              <a href="http://" class="px-4 py-2 bg-red-800 border-4 border-red-500 rounded-lg align-middle text-white font-bold">Hire Me!</a>
+              
             </div>
         </nav>
     </header>
@@ -109,8 +109,8 @@
                 </div>
             </div>
         </div>
-        <div id="profile" class="bg-black snap-start scroll-mb-30 min-h-screen w-full px-auto pt-20 overflow-x-hidden md:pt-10">
-            <div class="bg-slate-900/90 text-white w-5/6 mx-auto p-3 rounded" x-data="{ selectedTab: 'info' }">
+        <div id="profile" class="flex align-middle snap-start scroll-mb-30 min-h-screen w-full px-auto pt-20 overflow-x-hidden md:pt-10">
+            <div class="bg-slate-900/90 text-white w-5/6 mx-auto p-3 rounded flex align-middle" x-data="{ selectedTab: 'info' }">
                 <div class="flex w-full relative flex-col md:flex-row" role="tablist">
                     <div 
                         class="flex flex-col w-full text-xl border-b-2 border-b-slate-700 pb-2 md:w-1/4 md:border-r-2 md:border-r-slate-700 md:border-b-0 *:px-4 *:py-3">
@@ -256,13 +256,54 @@
                 </div>
             </div>
         </div>
-        <div id="contact" class="snap-start scroll-mb-20 min-h-screen mx-auto">
-            <div>
-                <h2>Contactame</h2>
-                <p>
-                    Aqui tendre un formulario de contacto
-                </p>
-            </div>
+        <div id="contact" class="snap-start scroll-mb-20 h-auto mx-auto">
+            <footer  aria-labelledby="footer-heading">
+                <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+                    <div class="text-start xl:grid xl:grid-cols-3 xl:gap-8">
+                        <div class="space-y-0 md:space-x-8">
+                        <img src="assets/images/logo.png" class="mx-auto" alt="Dan Espino WebDeveloper Portfolio" width="200" height="300">
+                        <p class="text-sm leading-6 text-gray-600 text-center">Building the next good experience for everyone.</p>
+                    </div>
+                    <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+                        <div class="flex flex-col justify-center">
+                            <div class="flex flex-col">
+                                <a href="https://drive.google.com/file/d/1UnALNRbJa2dzDfBFvIn61qqFxCIre-80/view?usp=sharing" class="px-4 py-2 bg-red-800 border-4 border-red-500 rounded-lg text-white text-center font-bold">Download my CV</a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <div class="flex flex-row font-bold text-lg">
+                                Puedes contactarme en: 
+                            </div>
+                            <div class="flex flex-row space-x-6 *:text-4xl *:text-slate-700">
+                                <a href="#" class="hover:text-blue-700">
+                                    <span class="sr-only">Facebook</span>
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a href="#" class="hover:text-blue-700">
+                                    <span class="sr-only">LinkedIn</span>
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="hover:text-black">
+                                    <span class="sr-only">X</span>
+                                    <i class="fa-brands fa-square-x-twitter"></i>
+                                </a>
+                                <a href="#" class="hover:text-black">
+                                    <span class="sr-only">GitHub</span>
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="#" class="hover:text-red-600">
+                                    <span class="sr-only">YouTube</span>
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+                        <p class="text-xs leading-5 text-gray-500">&copy; 2024 Dan Espino. All rights reserved.</p>
+                    </div>
+                </div>
+                </footer>
         </div>
     </main>
     <script src="assets/scripts/index.js"></script>

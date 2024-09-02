@@ -12,15 +12,29 @@ export default class ProjectGallery {
         try {
             let projects = JSON.parse(localStorage.getItem('projects'));
 
-            if (projects === null || projects === undefined) {
+            if (projects === null || projects === undefined || projects.metadata.lastUpdate === undefined || projects.metadata.lastUpdate === null) {
                 const response = await fetch('./assets/scripts/projects.json');
                 if (!response.ok) {
                     throw new Error('Error with Network Response');
                 }
                 this.projects = await response.json();
                 localStorage.setItem('projects', JSON.stringify(this.projects));
+                this.projects = this.projects.projects;
             } else {
-                this.projects = projects;
+                const lastUpdate = new Date(projects.metadata.lastUpdate);
+                const currentDate = new Date();
+                const diffTime = Math.abs(currentDate - lastUpdate);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                if (diffDays > 7) {
+                    const response = await fetch('./assets/scripts/projects.json');
+                    if (!response.ok) {
+                        throw new Error('Error with Network Response');
+                    }
+                    this.projects = await response.json();
+                    localStorage.setItem('projects', JSON.stringify(this.projects));
+                } else {
+                    this.projects = projects.projects;
+                }
             }
         } catch (error) {
             console.error(error);

@@ -1,5 +1,12 @@
-[
+{
+  "metadata": {
+    "lastUpdated": "2024-09-01T12:34:56Z",
+    "source": "InstantFolio API",
+    "version": "1.0.0"
+  },
+  "projects": [
   {
+    "identifier": "0d0093e0-c392-4457-9b9d-dc410245460c",
     "name": "BillBlaster API & WebPanel",
     "techstack": [
       "Laravel",
@@ -14,6 +21,7 @@
     "screenshot": "https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
   },
   {
+    "identifier": "14d23d36-c7de-4d78-8fdf-878258e77605",
     "name": "MyGymDate API & WebPanel",
     "techstack": [
       "Laravel", 
@@ -28,6 +36,7 @@
     "screenshot": "https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
   },
   {
+    "identifier": "96e97a27-4f49-401b-8292-9ae7d629ea05",
     "name": "InstantFolio",
     "techstack": [
       "Laravel", 
@@ -41,4 +50,5 @@
     "website": "https://instantfolio.online",
     "screenshot": "https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
   }
-]
+  ]
+}

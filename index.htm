@@ -112,93 +112,6 @@
                             </a>
                         </div>
                     </div>
-                    <div class="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-black bg-opacity-80"
-                        x-show="showModal">
-                        <!-- Modal inner -->
-                        <div class="w-3/4 h-5/6 px-6 py-4 mx-auto text-left bg-white rounded-lg shadow-lg overflow-y-auto"
-                            @click.away="showModal = false" x-transition:enter="motion-safe:ease-out duration-300"
-                            x-transition:enter-start="opacity-0 scale-90"
-                            x-transition:enter-end="opacity-100 scale-100">
-
-                            <!-- Title / Close-->
-                            <div class="flex items-center justify-between">
-                                <div class="mr-3 text-2xl font-bold text-black max-w-none">InstantFolio <a
-                                        href="https://instantfolio.online" title="Go to External Website"><i
-                                            class="fa-solid fa-arrow-up-right-from-square"></i></a> </div>
-
-                                <button type="button" class="z-50 cursor-pointer" @click="showModal = false">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <!-- content -->
-                            <div class="flex flex-col align-middle justify-center content-center">
-                                <div class="flex flex-col-reverse">
-                                    <div class="flex flex-col my-2 border-b border-b-slate-200">
-                                        <div class="flex flex-row justify-evenly *:mr-1.5 *:py-2">
-                                            <p>Start Date: 06/2024</p>
-                                            <p>End Date: In Progress</p>
-                                            <p>End Date: In Progress</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-col">
-                                        <div class="flex flex-row">
-                                            <span class="chip bg-green-700">
-                                                Tailwind
-                                            </span>
-                                            <span class="chip bg-blue-800">
-                                                <i class="fa-brands fa-bootstrap"></i>Bootstrap
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="flex flex-col-reverse md:flex-row-reverse">
-                                    <div class="flex flex-col">
-                                        <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&h=260&q=80"
-                                            width="700" height="200" alt="">
-                                    </div>
-                                    <div class="flex flex-col">
-                                        <p>This is a description for the website that is like a Lorem ipsum dolor sit,
-                                            amet consectetur adipisicing elit. Commodi assumenda consectetur nostrum
-                                            quis suscipit cupiditate illo corporis, nobis numquam itaque beatae
-                                            dignissimos eius inventore laborum distinctio repellendus nihil totam
-                                            voluptas!</p>
-
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe unde ex beatae
-                                            possimus delectus aliquid quos cum, modi fugit! Magnam tenetur eveniet
-                                            reprehenderit nesciunt laboriosam, aperiam praesentium saepe neque porro.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="hidden mt-4 *:my-2 md:flex md:flex-col">
-                                    <div class="flex flex-col text-lg font-bold">Media</div>
-                                    <div
-                                        class="overflow-x-scroll h-full align-middle scroll-smooth snap-x snap-mandatory snap-always py-5 md:h-3/5 *:mx-24 *:w-3/4 *:border *:h-auto md:flex md:flex-row">
-                                        <div
-                                            class="snap-center snap-always flex flex-shrink-0 items-stretch justify-center relative hover:scale-100 hover:text-2xl">
-                                            <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
-                                                class="justify-center w-full h-auto scale-100 relative z-0" />
-                                        </div>
-                                        <div
-                                            class="snap-center snap-always flex flex-shrink-0 items-stretch justify-center relative hover:scale-100 hover:text-2xl">
-                                            <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
-                                                class="justify-center w-full h-auto scale-100 relative z-0" />
-                                        </div>
-                                        <div
-                                            class="snap-center snap-always flex flex-shrink-0 items-stretch justify-center relative hover:scale-100 hover:text-2xl">
-                                            <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
-                                                class="justify-center w-full h-auto scale-100 relative z-0" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div id="profile"
                     class="flex align-middle snap-start scroll-mb-30 min-h-screen w-full px-auto pt-20 overflow-x-hidden md:pt-10">
@@ -387,28 +300,28 @@
                                                 my CV</a>
                                         </div>
                                     </div>
-                                    <div class="flex flex-col justify-center items-center border">
+                                    <div class="flex flex-col justify-center items-center">
                                         <div class="flex flex-row font-bold text-lg">
                                             Puedes contactarme en:
                                         </div>
                                         <div class="flex flex-row flex-wrap space-x-6 *:text-4xl *:text-slate-700">
-                                            <a href="#" class="hover:text-blue-700">
+                                            <a href="https://www.facebook.com/dan.espino91/" target="_blank" class="hover:text-blue-700">
                                                 <span class="sr-only">Facebook</span>
                                                 <i class="fa-brands fa-facebook"></i>
                                             </a>
-                                            <a href="#" class="hover:text-blue-700">
+                                            <a href="https://www.linkedin.com/in/danespino91/?locale=en_US" target="_blank" class="hover:text-blue-700">
                                                 <span class="sr-only">LinkedIn</span>
                                                 <i class="fa-brands fa-linkedin"></i>
                                             </a>
-                                            <a href="#" class="hover:text-black">
+                                            <a href="https://x.com/danespino91" target="_blank" class="hover:text-black">
                                                 <span class="sr-only">X</span>
                                                 <i class="fa-brands fa-square-x-twitter"></i>
                                             </a>
-                                            <a href="#" class="hover:text-black">
+                                            <a href="https://github.com/danespino" target="_blank" class="hover:text-black">
                                                 <span class="sr-only">GitHub</span>
                                                 <i class="fa-brands fa-github"></i>
                                             </a>
-                                            <a href="#" class="hover:text-red-600">
+                                            <a href="https://www.youtube.com/@MasterTech-With-DanEspino" target="_blank" class="hover:text-red-600">
                                                 <span class="sr-only">YouTube</span>
                                                 <i class="fa-brands fa-youtube"></i>
                                             </a>

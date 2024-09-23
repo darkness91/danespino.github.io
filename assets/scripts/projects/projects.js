@@ -1,3 +1,5 @@
+import Modal from "/assets/scripts/modals/modal.js";
+
 export default class ProjectGallery {
     constructor() {
         this.projects = [];
@@ -110,14 +112,20 @@ export default class ProjectGallery {
                 let projectElement = document.createElement('div');
                 projectElement.classList.value = 'snap-center snap-always flex flex-shrink-0 items-stretch justify-center relative hover:scale-100 hover:text-2xl';
                 projectElement.innerHTML = `
-                    <a href="${project.website}" target="_blank" class="h-full w-full">
-                        <img src="${project.screenshot}" class="justify-center size-full scale-100 relative z-0" />
+                    <a id="${project.identifier}" class="w-full ">
+                        <img src="${project.screenshot}" class="justify-center size-fit scale-100 relative z-0 hover:blur-sm hover:bg-black/75" />
                         <div class="w-32 h-16 font-bold text-center text-white absolute top-0 -right-2 z-10">
                             <div class="triangleIndicator hidden hover:inline-block"> <span>${project.year_start}</span></div>
-                            
                         </div>
-                        <p class="max-w-1/2 font-bold text-white self-center justify-center text-center absolute text-wrap inset-x-1/3 inset-y-0 content-around z-10">${project.name}</p>
+                        <p class="max-w-1/2 font-bold text-white self-center justify-center text-center absolute text-wrap inset-x-1/3 inset-y-0 content-around z-10 hover:invert hover:contrast-125 hover:bg-black/80">${project.name}</p>
                     </a>`;	
+                projectElement.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const linkElement = e.target.closest('a');
+                    if (linkElement) {
+                        this.drawProjectModal(linkElement.id);
+                    }
+                });
                 projectFolio.appendChild(projectElement);
                 
             });
@@ -226,5 +234,123 @@ export default class ProjectGallery {
         `); // Attach Alpine.js directive
 
         return;
+    }
+
+    drawTechStackTags(project) {
+        const techStacks = [
+            { name: 'React.js', background: 'bg-black', color: 'text-white', icon: 'fa-brands fa-react text-cyan-500' },
+            { name: 'Tailwind', background: 'bg-slate-700', color: 'text-white', icon: 'fa-brands fa-react text-cyan-500' },
+            { name: 'Laravel', background: 'bg-white', color: 'text-red-500', icon: 'fa-brands fa-laravel' },
+            { name: 'Bootstrap', background: 'bg-purple-700', color: 'text-white', icon: 'fa-brands fa-bootstrap' },
+        ];
+        
+        let techStackContainer = document.createElement('div');
+        techStackContainer.className = 'flex flex-row';
+        project.techstack.forEach(stack => {
+            
+            let techStackTag = document.createElement('span');
+            techStackTag.className = 'chip';
+            techStackTag.setAttribute('role', 'chip');
+            techStackTag.setAttribute('aria-label', stack);
+            techStackTag.textContent = stack;
+
+            let techStackSel = techStacks.find(stackObj => stackObj.name === stack)
+            
+            if(techStackSel !== undefined && techStackSel.background !== undefined && techStackSel.color !== undefined) {
+                techStackTag.classList.add(techStackSel.background, techStackSel.color);
+            }
+
+            if(techStackSel !== undefined && techStackSel.icon !== undefined) {
+                let icon = document.createElement('i');
+                icon.className = techStackSel.icon;
+                techStackTag.prepend(icon);
+            } else if(techStackSel !== undefined && techStackSel.iconPath !== undefined){
+
+            }
+            techStackContainer.appendChild(techStackTag);
+        });
+        return techStackContainer.outerHTML;
+    }
+
+    drawMediaGallery(project) {
+        let mediaContainer = document.createElement('div');
+        mediaContainer.className = 'overflow-x-scroll align-middle scroll-smooth snap-x snap-mandatory snap-always py-5 *:mx-24 *:w-3/4 *:border *:h-auto md:flex md:flex-row';
+        
+        if(project.media !== undefined) {
+            project.media.forEach(media => {
+                if(media.type === 'image') {
+                    var mediaElement = document.createElement('img');
+                } else if(media.type === 'video') {
+                    var mediaElement = document.createElement('iframe');
+                    mediaElement.width = '560';
+                    mediaElement.height = '315';
+                    mediaElement.src = 'https://youtube-nocookie.com/embed/'+media.url;
+                    mediaElement.frameBorder = '0';
+                    mediaElement.allow = 'autoplay; encrypted-media';
+                    mediaElement.allowFullscreen = true;
+                } else {
+                    console.log(media);
+                }
+                if(media.type !== 'video') mediaElement.src = media.url;
+                mediaContainer.appendChild(mediaElement);
+            });
+            return mediaContainer.outerHTML;
+        }
+        return 'Loading..';
+    }
+
+    drawProjectModal(proj_id) {
+        const project = this.projects.find(project => project.identifier === proj_id);
+        if(project !== undefined) {
+            const modal = new Modal({
+                config: {
+                    'title': `<a href="${project.website}" title="Go to External Website">${project.name}<i class="ml-2 fa-solid fa-arrow-up-right-from-square"></i></a>`,
+                    'parentDiv': 'projects',
+                    'modalSize': 'lg',
+                    'actions': {
+                        'close': {
+                            'label': 'Close',
+                            'type': 'secondary'
+                        }
+                    }
+                },
+                modalContent: `
+                    <div class="flex flex-col-reverse overflow-auto">
+                        <div class="flex flex-col my-2 border-b border-b-slate-200">
+                            <div class="flex flex-row justify-evenly *:mr-1.5 *:py-2">
+                                <p>Start Date: ${project.month_start}/${project.year_start}</p>
+                                ${project.completed === false 
+                                    ? `<p>Status: On Development</p>` 
+                                    : `<p>Status: Completed</p>
+                                    <p>End Date: ${project.month_ended}/${project.year_ended !== undefined ? project.year_ended : project.year_start}</p>`}
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="flex flex-row">
+                                ${this.drawTechStackTags(project)}
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="flex flex-col-reverse md:flex-row-reverse">
+                        <div class="flex flex-col w-5/6 md:w-1/3">
+                            <img src="${project.screenshot}" class="float-right size-fit" alt="${project.title}">
+                        </div>
+                        <div class="flex flex-col content-end border mr-2">
+                            <p class="text-lg font-bold">Description</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. </p>
+                        </div>
+                    </div>
+                    <div class="hidden mt-4 *:my-2 md:flex md:flex-col">
+                        <div class="flex flex-col text-lg font-bold">Media</div>
+                        <div class="overflow-x-scroll h-full align-middle scroll-smooth snap-x snap-mandatory snap-always py-5 md:h-3/5 *:mx-24 *:w-3/4 *:border *:h-auto md:flex md:flex-row">
+                            ${this.drawMediaGallery(project)}
+                        </div>
+                    </div>
+                `,
+            });
+
+            modal.open();
+        }
     }
 }

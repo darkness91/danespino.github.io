@@ -59,9 +59,21 @@
 }
 
 .chip {
-    @apply px-4 py-2 mx-1 my-2 border rounded-xl inline-block text-white font-semibold text-sm;
+    @apply px-4 py-2 mx-1 my-2 border rounded-xl inline-block font-semibold text-sm;
 }
 
 .chip i, .chip svg{
     @apply mr-2;
+}
+
+.btn {
+    @apply m-2 px-4 py-2 cursor-pointer shadow-gray-800 font-bold border rounded-md;
+}
+
+.btn-primary {
+    @apply bg-slate-700
+}
+
+.btn-secondary {
+    @apply bg-slate-400
 }

@@ -1,48 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="Dan A. Espino">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Dan Espino&lsquo;s Porfolio - Bienvenido</title>
-    <link rel="icon" href="assets/img/favicon.png">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=OPEN_SANS&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container">
-        <div class="row align-items-center my-4 py-5">
-            <div class="col-xs-12 col-sm-6 h-50 order-2 order-sm-1">
-                <p class="text-center fs-1 mt-2 mb-0"><i class="bi bi-exclamation-triangle-fill text-white"></i></p>
-                <p class="text-center text-white fs-1">Bajo construcci&oacute;n</p>
-                <p class="text-start text-white fs-4">Lo sentimos! Esta p&aacute;gina web se encuentra en
-                    construcci&oacute;n. Agradecemos tu visita, puedes obtener mayor informaci&oacute;n en cualquiera de las
-                    redes sociales.</p>
-                <p class="text-center text-white fs-5">Imagen extra&iacute;da de <a
-                        href="https://www.pngwing.com/es/free-png-bydap" target="_blank" class="link-light">pngwing</a></p>
-                <p class="text-center align-self-center py-3">
-                    <a href="https://www.facebook.com/dan.espino91/" class="btn btn-primary" target="_blank"><i class="bi bi-facebook fs-3 text-white"></i></a>
-                    <a href="https://twitter.com/danespino91" class="btn btn-info" target="_blank"><i class="bi bi-twitter fs-3 text-white"></i></a>
-                    <a href="https://www.linkedin.com/in/danespino91" class="btn btn-outline-primary bg-white" target="_blank"><i class="bi bi-linkedin fs-3 text-primary"></i></a>
-                    <a href="mailto:daniel.espino91sv@gmail.com" class="btn btn-outline-primary bg-warning" target="_blank"><i class="bi bi-envelope fs-3 text-light"></i></a>
-                </p>
-            </div>
-            <div class="col-xs-12 col-sm-6 h-50 order-1 order-sm-2 align-self-center">
-                <img class="img-fluid mx-auto d-block" src="assets/img/manworking.png">
-            </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="Dan A. Espino">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <title>Dan Espino&lsquo;s Porfolio - Bienvenido</title>
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+        <link rel="stylesheet" href="assets/styles/allcorptheme.css">
+    </head>
+    <body class="bg-scroll bg-gradient-to-b from-slate-800 via-gray-500 to-gray-200">
+        <div id="loader" class="flex flex-row justify-center h-screen">
+            <img src="assets/images/logo.png" alt="Dan Espino Logo">
+            <span class="fixed bottom-0 my-10 text-slate-600 font-bold text-2xl"
+                data-i18n-handler="loadingDefaultStatus">Cargando</span>
         </div>
-        <div class="row py-1">
-            <div class="col-12">
-                <p class="text-center text-white fs-5">&copy; 2023. Dan Espino</p>
-            </div>
+        <div id="landingPage">
+            <header class="sticky top-0 z-50">
+                <nav class="navigationBar">
+                    <div class="hidden md:flex">
+                        <img src="assets/images/logo.png" alt="DanEspino Logo" width="150" height="100">
+                    </div>
+                    <div class="min-w-screen flex items-center justify-center px-5">
+                        <div class="w-full max-w-md mx-auto">
+                            <div class="px-7 rounded-2xl font-bold">
+                                <div class="flex">
+                                    <div class="flex-1 group navigationButton">
+                                        <a href="#start">
+                                            <span class="block px-1 pt-1 pb-1">
+                                                <i class="navigationButtonIcon fa fa-home"></i>
+                                                <span class="navigationButtonText">Start</span>
+                                                <span class="actIndicator"></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="flex-1 group navigationButton">
+                                        <a href="#projects">
+                                            <span class="block px-1 pt-1 pb-1">
+                                                <i class="navigationButtonIcon fa-solid fa-briefcase"></i>
+                                                <span class="navigationButtonText">Projects</span>
+                                                <span class="actIndicator"></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="flex-1 group navigationButton">
+                                        <a href="#profile">
+                                            <span class="block px-1 pt-1 pb-1">
+                                                <i class="navigationButtonIcon fa fa-id-badge"></i>
+                                                <span class="navigationButtonText">Profile</span>
+                                                <span class="actIndicator"></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="flex-1 group navigationButton">
+                                        <a href="#contact">
+                                            <span class="block px-1 pt-1 pb-1">
+                                                <i class="navigationButtonIcon fa-solid fa-comments"></i>
+                                                <span class="navigationButtonText">Contact Me</span>
+                                                <span class="actIndicator"></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:inline-block md:mx-16">
+                        <!-- <a href="#" class="px-4 py-2 bg-red-800 border-4 border-red-500 rounded-lg text-white text-center font-bold">Hire Me!</a> -->
+                    </div>
+                </nav>
+            </header>
+            <main class="h-screen overflow-y-scroll scroll-smooth snap-y snap-normal *:py-30 *:z-0">
+                <div id="start" class="snap-start scroll-mb-30 min-h-screen mb-8 content-center">
+                    <div class=" lg:w-1/2 lg:float-left px-10 lg:py-18 lg:mt-12">
+                        <h1 class="font-sans text-4xl tracking-wide font-semibold text-gray-300 py-2 text-justify">
+                            Buscas un Full-Stack Web Developer <strong class="text-yellow-400">Responsable y
+                                Experimentado</strong>?
+                        </h1>
+                        <p class="text-md tracking-normal leading-loose text-white text-justify">
+                            Me llamo Daniel Espino. Soy un apasionado por la tecnolog&iacute;a y el profesional indicado
+                            para el trabajo que tienes en mente.
+                            Descubre los proyectos que he desarrollado, explora mi perfil t&eacute;cnico y encuentra
+                            enlaces para ponerte en contacto conmigo. Actualmente, estoy trabajando en un proyecto
+                            m&aacute;s grande donde podr&eacute; desplegar mi portafolio y ofrecer funciones adecuadas
+                            para una interacción m&aacute;s r&aacute;pida.
+                            Te invito a que te pongas en contacto conmigo y est&eacute;s pendiente de las novedades de
+                            mis redes sociales.
+                        </p>
+                    </div>
+                    <div class="flex w-screen justify-center align-middle lg:w-1/2 lg:float-right">
+                        <img src="assets/images/personal.png" alt="Dan Espino Photo"
+                            class="shadow-lg scale-100 md:scale-75">
+                    </div>
+                </div>
+                <div id="projects"
+                    class="bg-black/80 snap-start h-screen w-full px-auto content-around static z-0 items-center border md:content-start md:py-20"
+                    x-data="{ 'showModal': false}">
+                    <noscript>
+                        <p class="flex flex-row text-center align-middle">You will need to enable Javascript to see this
+                            section</p>
+                    </noscript>
+
+                    <div id="projects_gallery"
+                        class="flex overflow-x-scroll h-3/5 scroll-smooth snap-x snap-mandatory snap-always py-5 md:h-3/5 *:mx-20 *:w-3/4">
+                    </div>
+                </div>
+                <div id="profile"
+                    class="flex align-middle snap-start scroll-mb-30 min-h-screen w-full px-auto pt-20 overflow-x-hidden md:pt-10">
+                    <div class="bg-slate-900/90 text-white w-5/6 mx-auto p-3 rounded flex align-middle"
+                        x-data="{ selectedTab: 'info' }">
+                        <div class="flex w-full relative flex-col md:flex-row" role="tablist">
+                            <div
+                                class="flex flex-col w-full text-xl border-b-2 border-b-slate-700 pb-2 md:w-1/4 md:border-r-2 md:border-r-slate-700 md:border-b-0 *:px-4 *:py-3">
+                                <div class="text-white w-full font-bold text-center">Informaci&oacute;n</div>
+                                <button @click="selectedTab = 'info'" :aria-selected="selectedTab = 'info'"
+                                    type="button" role="tab" aria-controls="tabpannelInfo"
+                                    :class="selectedTab === 'info' ? 'bg-sky-200/50' : 'bg-transparent'"
+                                    :tabindex="selectedTab === 'info' ? '0' : '-1'"
+                                    class="rounded w-full text-start px-4 py-2">
+                                    Información General
+                                </button>
+                                <button @click="selectedTab = 'work'" :aria-selected="selectedTab = 'work'"
+                                    type="button" role="tab" aria-controls="tabpannelWork"
+                                    :class="selectedTab === 'work' ? 'bg-sky-200/50' : 'bg-transparent'"
+                                    :tabindex="selectedTab === 'work' ? '0' : '-1'"
+                                    class="rounded w-full text-start px-4 py-2">
+                                    Formación y Empleo
+                                </button>
+                                <button @click="selectedTab = 'skills'" :aria-selected="selectedTab = 'skills'"
+                                    type="button" role="tab" aria-controls="tabpannelSkills"
+                                    :class="selectedTab === 'skills' ? 'bg-sky-200/50' : 'bg-transparent'"
+                                    :tabindex="selectedTab === 'skills' ? '0' : '-1'"
+                                    class="rounded w-full text-start px-4 py-2">
+                                    Certificaciones
+                                </button>
+                            </div>
+                            <div class="flex w-3/4 px-4">
+                                <div x-show="selectedTab === 'info'" id="tabpannelInfo" role="tabpanel"
+                                    aria-label="info" class="flex flex-col text-xl w-full mt-6 *:py-4">
+                                    <p><i class="fa-solid fa-location-dot mr-2"></i>Ubicación: <strong> San
+                                            Salvador</strong></p>
+                                    <div class="flex flex-col">
+                                        <span class="inline">Idiomas</span>
+                                        <hr class="border-white">
+                                    </div>
+
+                                    <div class="flex flex-row gap-5">
+                                        <div class="flex flex-col justify-center align-middle text-3xl">
+                                            <i class="fa-solid fa-language"></i>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span>Spanish</span>
+                                            <span class="text-xs">Nativo</span>
+                                        </div>
+                                        <div class="flex flex-col justify-center align-middle text-3xl">
+                                            <i class="fa-solid fa-language"></i>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span>English</span>
+                                            <span class="text-xs">C2</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <span class="inline">Lenguajes de Programación</span>
+                                        <hr class="border-white">
+                                    </div>
+                                    <div class="flex flex-row gap-5">
+                                        <img src="https://skillicons.dev/icons?i=html,js,react,css,bootstrap,tailwind,laravel,php,mysql,postgres"
+                                            class="size-full" alt="">
+                                    </div>
+                                </div>
+                                <div x-show="selectedTab === 'work'" id="tabpannelWork" role="tabpanel"
+                                    aria-label="work" class="flex flex-col text-xl w-full mt-6 *:py-4">
+                                    <div class="flex flex-row gap-5">
+                                        <div class="flex flex-col justify-center align-middle text-3xl">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span>Trabaja en <strong> <a href="#">Tek-Experts El Salvador</a>
+                                                </strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-row gap-5">
+                                        <div class="flex flex-col justify-center align-middle text-3xl">
+                                            <i class="fa-solid fa-graduation-cap"></i>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span>Estudió en <strong> <a href="https://www.ues.edu.sv"
+                                                        target="_blank">Universidad de El Salvador</a> </strong></span>
+                                            <span class="text-xs">Desde 2012 al 2021</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <span class="inline">Otras experiencias (Tech)</span>
+                                        <hr class="border-white">
+                                    </div>
+
+                                    <div class="flex flex-row gap-5">
+                                        <div class="flex flex-col justify-center align-middle text-3xl">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span>Trabajó en <strong> <a href="https://tecmanic.com/"
+                                                        target="_blank">Tecmanic USA</a> </strong></span>
+                                            <span class="text-xs">Desde Jun-2022 a Feb-2024</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-row gap-5">
+                                        <div class="flex flex-col justify-center align-middle text-3xl">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span>Trabajó en <strong> <a href="#" target="_blank">Strategy & Technology
+                                                        MX</a> </strong></span>
+                                            <span class="text-xs">Desde Apr-2023 a Jul-2023</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div x-show="selectedTab === 'skills'" id="tabpannelSkills" role="tabpanel"
+                                    aria-label="skills" class="flex flex-col text-xl w-full mt-6 *:py-4">
+                                    <div class="flex flex-col">
+                                        <span class="inline">Salesforce</span>
+                                        <hr class="border-white">
+                                    </div>
+                                    <div class="flex flex-row gap-5">
+                                        <div class="flex flex-col justify-center align-middle text-3xl">
+                                            <i class="fa-solid fa-award"></i>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span><strong> <a href="#">Certified Platform App
+                                                        Builder</a></strong></span>
+                                            <span class="text-xs">Since Oct-2022</span>
+                                        </div>
+                                        <div class="flex flex-col justify-center align-middle text-3xl">
+                                            <i class="fa-solid fa-award"></i>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span><strong> <a href="#">Certified Associate</a></strong></span>
+                                            <span class="text-xs">Since May-2023</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col">
+                                        <span class="inline">Cursos</span>
+                                        <hr class="border-white">
+                                    </div>
+                                    <div class="flex flex-row gap-5">
+                                        <div class="flex flex-col justify-center align-middle text-3xl">
+                                            <i class="fa-solid fa-award"></i>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span><strong> <a href="#" target="_blank">PMI-CAPM</a> </strong></span>
+                                            <span class="text-xs">Aligned Course By SkillSoft (Nov-2021)</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-row gap-5">
+                                        <div class="flex flex-col justify-center align-middle text-3xl">
+                                            <i class="fa-solid fa-award"></i>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span><strong> <a href="#" target="_blank">PMI-ACP</a> </strong></span>
+                                            <span class="text-xs">Aligned Course By SkillSoft (Nov-2020)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact" class="snap-start scroll-mb-20 h-auto mx-auto">
+                    <footer aria-labelledby="footer-heading">
+                        <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+                            <div class="text-start xl:grid xl:grid-cols-3 xl:gap-8">
+                                <div class="space-y-0 md:space-x-8">
+                                    <img src="assets/images/logo.png" class="mx-auto"
+                                        alt="Dan Espino WebDeveloper Portfolio" width="200" height="300">
+                                    <p class="text-sm leading-6 text-gray-600 text-center">Building the next good
+                                        experience for everyone.</p>
+                                </div>
+                                <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+                                    <div class="flex flex-col justify-center md:items-center">
+                                        <div class="flex flex-col">
+                                            <a href="https://drive.google.com/file/d/1UnALNRbJa2dzDfBFvIn61qqFxCIre-80/view?usp=sharing"
+                                                class="px-4 py-2 bg-red-800 border-4 border-red-500 rounded-lg text-white text-center font-bold md:w-fit">Download
+                                                my CV</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col justify-center items-center">
+                                        <div class="flex flex-row font-bold text-lg">
+                                            Puedes contactarme en:
+                                        </div>
+                                        <div class="flex flex-row flex-wrap space-x-6 *:text-4xl *:text-slate-700">
+                                            <a href="https://www.facebook.com/dan.espino91/" target="_blank" class="hover:text-blue-700">
+                                                <span class="sr-only">Facebook</span>
+                                                <i class="fa-brands fa-facebook"></i>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/danespino91/?locale=en_US" target="_blank" class="hover:text-blue-700">
+                                                <span class="sr-only">LinkedIn</span>
+                                                <i class="fa-brands fa-linkedin"></i>
+                                            </a>
+                                            <a href="https://x.com/danespino91" target="_blank" class="hover:text-black">
+                                                <span class="sr-only">X</span>
+                                                <i class="fa-brands fa-square-x-twitter"></i>
+                                            </a>
+                                            <a href="https://github.com/danespino" target="_blank" class="hover:text-black">
+                                                <span class="sr-only">GitHub</span>
+                                                <i class="fa-brands fa-github"></i>
+                                            </a>
+                                            <a href="https://www.youtube.com/@MasterTech-With-DanEspino" target="_blank" class="hover:text-red-600">
+                                                <span class="sr-only">YouTube</span>
+                                                <i class="fa-brands fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+                                <p class="text-xs leading-5 text-gray-500">&copy; 2024 Dan Espino. All rights reserved.
+                                </p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </main>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-</body>
+        <script type="module" src="assets/scripts/index.js"></script>
+    </body>
 </html>

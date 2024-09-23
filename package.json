@@ -2,7 +2,7 @@
   "name": "danespino-portfolio",
   "version": "0.1.0",
   "description": "This is a temporary version of my portfolio",
-  "main": "index.htm",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx tailwindcss -i ./assets/styles/corptheme.css -o ./assets/styles/allcorptheme.css --watch",

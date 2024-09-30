@@ -12,7 +12,7 @@ on:
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     name: Build and Deploy Job
     permissions:
        id-token: write
@@ -47,7 +47,7 @@ jobs:
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     name: Close Pull Request Job
     steps:
       - name: Close Pull Request

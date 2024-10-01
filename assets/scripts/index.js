@@ -6,12 +6,13 @@ const showLoader = (show = false) => {
 
     if(show) {
         document.body.classList.remove("bg-scroll");
-        workArea.style = "display: none";
+        workArea.style = "display: none; visibility: false;";
         document.body.style = "overflow: hidden";
-        loaderDiv.style = "display: flex";
+        loaderDiv.style = "display: flex; visibility: true;";
+        
     } else {
         workArea.style = "display: block";
-        document.body.style = "overflow: auto";
+        document.body.style = "overflow: hidden";
         loaderDiv.style = "display: none";
     }
     return;

@@ -16,7 +16,7 @@ export default class Modal {
         modal.classList.add('-mt-10', 'fixed', 'inset-0', 'z-50', 'flex', 'items-center', 'justify-center', 'overflow-auto', 'bg-black', 'bg-opacity-80');
         let modalSizeStyle = (this.modalSize !== 'auto') ? 'w-3/4 h-screen' : 'w-5/6';
         modalSizeStyle.split(' ').forEach(style => modalInner.classList.add(style));
-        modalInner.classList.add('px-6', 'py-4', 'mx-auto', 'text-left', 'bg-white', 'rounded-lg', 'shadow-lg', 'overflow-auto');
+        modalInner.classList.add('px-6', 'py-4', 'mx-auto', 'text-left', 'bg-white', 'rounded-lg', 'shadow-lg');
 
         modal.setAttribute('role', 'dialog');
         modal.setAttribute('x-show', '{ showModal: true }');
@@ -32,7 +32,7 @@ export default class Modal {
         modal.innerHTML= '';    // Clear content that may be in the modal
 
         modalWindow.innerHTML = `
-            <div class="flex sticky -top-10 bg-white -m-2 py-7 items-center justify-between">
+            <div class="flex sticky -top-10 overflow-auto bg-white -m-2 py-7 items-center justify-between">
                 <div class="mr-3 text-2xl font-bold text-black max-w-none">${this.title}</div>
                 <button type="button" id="closeModalBtn" class="z-50 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
